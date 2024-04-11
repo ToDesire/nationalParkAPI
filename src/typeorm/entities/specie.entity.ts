@@ -1,6 +1,5 @@
 import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Picture } from "./picture.entity";
-import { Landscape } from "./landscape.entity";
 
 @Entity({name: 'species'})
 export class Specie {
@@ -18,8 +17,4 @@ export class Specie {
 
     @OneToMany(() => Picture, (picture) => picture.specie)
     pictures: Picture[];
-
-    @ManyToMany(() => Landscape)
-    @JoinTable()
-    landscapes: Landscape[];
 }

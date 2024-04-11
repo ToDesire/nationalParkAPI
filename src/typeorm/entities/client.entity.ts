@@ -1,5 +1,4 @@
 import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Reservation } from "./reservation.entity";
 import { Evenement } from "./evenement.entity";
 
 @Entity({ name: 'clients'})
@@ -18,9 +17,6 @@ export class Client{
 
     @Column()
     nationality: string;
-
-    @OneToMany(() => Reservation, (reservation) => reservation.client)
-    reservations: Reservation[];
 
     @ManyToMany(() => Evenement)
     @JoinTable()
