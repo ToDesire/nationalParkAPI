@@ -76,6 +76,6 @@ export class PhotoService {
             throw new Error(err);
         }
     }
-    
+
     
 }
